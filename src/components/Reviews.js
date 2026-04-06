@@ -6,7 +6,6 @@ import {
   FaPlus, 
   FaTimes, 
   FaCheckCircle, 
-  FaUserCircle,
   FaArrowRight
 } from "react-icons/fa";
 import "../styles/Reviews.css";

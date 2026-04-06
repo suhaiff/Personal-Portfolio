@@ -1,112 +1,127 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { useProgress } from "@react-three/drei";
-import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope, FaDownload, FaArrowRight } from "react-icons/fa";
 import "../styles/Hero.css"; 
+import resume from "../assets/resume.pdf";
 
-const Loader = () => {
-  const { progress } = useProgress();
-  return (
-    <div style={{ color: "white", position: "absolute", top: 20, left: 20, zIndex: 10 }}>
-      Loading... {Math.round(progress)}%
-    </div>
-  );
-};
 
 const Hero = () => {
-  const { progress } = useProgress();
-
   return (
     <div className="hero-container" id="home">
-      {progress < 100 && <Loader />}
 
       <section className="hero-section">
+        
+        {/* Top Badge */}
+        <motion.div
+           className="hero-badge"
+           initial={{ y: -30, opacity: 0 }}
+           animate={{ y: 0, opacity: 1 }}
+           transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          <span className="pulse-dot"></span> Available for New Opportunities
+        </motion.div>
+
+        {/* Main Heading */}
         <motion.h1
           className="hero-heading"
-          initial={{ y: -50, opacity: 0 }}
+          initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
         >
-           Passionate Frontend Developer
+          Forging Digital <span>Realities</span>
         </motion.h1>
 
+        {/* Subtitle */}
         <motion.h2
           className="hero-subtitle"
-          initial={{ y: 50, opacity: 0 }}
+          initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
+          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
         >
-          Designer - UI Crafter - React Enthusiast
+          AI Product Engineer & Full-Stack Builder
         </motion.h2>
 
+        {/* Description */}
         <motion.p
           className="hero-description"
-          initial={{ y: 60, opacity: 0 }}
+          initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
+          transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
         >
-          The mind behind clean code and creative interfaces. I build immersive web experiences with a <span>developer's brain</span> and a <span>designer's eye</span>.
+          I engineer AI products that don't just work — they think. Bridging the gap between research and real-world impact, I design systems where models, data, and interfaces come together into something genuinely useful.
         </motion.p>
 
+        {/* Action Buttons */}
         <motion.div
           className="hero-button-group"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.7 }}
-        >
-          <a href="#projects" className="hero-button primary">View Projects</a>
-          <a href="/Sohib_Resume.pdf" download className="hero-button secondary">Download Resume</a>
-        </motion.div>
-
-        <motion.div
-          className="hero-socials"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.9 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <a href="https://github.com/sohibakthar" target="_blank" rel="noopener noreferrer"><FaGithub /></a>
-          <div className="vertline"></div>
-          <a href="https://linkedin.com/in/sohibakthar" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
-          <div className="vertline"></div>
-          <a href="mailto:your@email.com"><FaEnvelope /></a>
+          <a href="#projects" className="hero-btn btn-primary">
+            Explore Portfolio <FaArrowRight className="btn-icon" />
+          </a>
+          <a href={resume} download="Sohib_Akthar_Resume.pdf" className="hero-btn btn-secondary">
+            <FaDownload className="btn-icon-left" /> Download Resume
+          </a>
         </motion.div>
+
+        {/* Social Links */}
+        <motion.div
+          className="hero-socials"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.7 }}
+        >
+          <a href="https://github.com/sohibakthar" target="_blank" rel="noopener noreferrer" aria-label="Github">
+            <FaGithub />
+          </a>
+          <a href="https://linkedin.com/in/sohibakthar" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <FaLinkedin />
+          </a>
+          <a href="mailto:your@email.com" aria-label="Email">
+            <FaEnvelope />
+          </a>
+        </motion.div>
+
       </section>
-      {/* Floating Words */}
-      <motion.span
-        className="floating-word"
-        style={{ top: "20%", left: "20%" }}
-        animate={{ y: [0, -20, 0] }}
-        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-      >
-        Frontend
-      </motion.span>
 
-      <motion.span
-        className="floating-word"
-        style={{ top: "60%", left: "20%" }}
-        animate={{ y: [0, 25, 0] }}
-        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+      {/* Floating Glass Pills */}
+      <motion.div
+        className="floating-pill"
+        style={{ top: "15%", left: "10%" }}
+        animate={{ y: [0, -20, 0], rotate: [0, -2, 0] }}
+        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
       >
-        React.js
-      </motion.span>
+        React Ecosystem
+      </motion.div>
 
-      <motion.span
-        className="floating-word"
-        style={{ top: "30%", right: "25%" }}
-        animate={{ y: [0, -30, 0] }}
-        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+      <motion.div
+        className="floating-pill blur-pill"
+        style={{ top: "65%", left: "5%" }}
+        animate={{ y: [0, 25, 0], rotate: [0, 3, 0] }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
       >
-        UI/UX
-      </motion.span>
+        UI / UX Architecture
+      </motion.div>
 
-      <motion.span
-        className="floating-word"
-        style={{ bottom: "10%", right: "25%" }}
-        animate={{ y: [0, 20, 0] }}
-        transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 1.2 }}
+      <motion.div
+        className="floating-pill"
+        style={{ top: "25%", right: "8%" }}
+        animate={{ y: [0, -15, 0], rotate: [0, 5, 0] }}
+        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
       >
-        Python
-      </motion.span>
+        Three.js / WebGL
+      </motion.div>
+
+      <motion.div
+        className="floating-pill blur-pill"
+        style={{ bottom: "15%", right: "12%" }}
+        animate={{ y: [0, 20, 0], rotate: [0, -4, 0] }}
+        transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 1.2 }}
+      >
+        Front-End
+      </motion.div>
 
     </div>
   );

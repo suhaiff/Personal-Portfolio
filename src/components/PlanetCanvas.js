@@ -30,7 +30,7 @@ const PlanetCanvas = () => {
         left: 0,
         width: "100%",
         zIndex: 0,
-        backgroundColor: "#000",
+        backgroundColor: "#0d0d12",
         opacity: "0.8",
       }}
     >

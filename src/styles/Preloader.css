@@ -1,0 +1,230 @@
+/* ============================================================
+   Preloader Section - Premium Tier
+   Ultra-modern Gyroscopic Earth Animation with Vercel/Web3 level aesthetics
+   ============================================================ */
+
+.premium-preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #0d0d12;
+  z-index: 100000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Deep Space Ambient Glow */
+.preload-ambient {
+  position: absolute;
+  border-radius: 50%;
+  z-index: 0;
+  pointer-events: none;
+}
+.preload-ambient-1 {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 60%);
+  top: -100px;
+  left: -100px;
+}
+.preload-ambient-2 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(20, 184, 166, 0.1) 0%, transparent 60%);
+  bottom: -100px;
+  right: -100px;
+}
+
+/* Main Wrapper */
+.preloader-content-wrapper {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  /* Glass panel effect */
+  background: rgba(20, 20, 28, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 60px 80px;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(99, 102, 241, 0.05);
+}
+
+/* Gyro Earth Centerpiece */
+.gyro-earth-container {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1200px;
+  transform-style: preserve-3d;
+}
+
+.gyro-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  transform-style: preserve-3d;
+}
+
+.ring-x {
+  border-color: rgba(99, 102, 241, 0.6);
+  box-shadow: 0 0 10px rgba(99, 102, 241, 0.2);
+}
+.ring-y {
+  border-color: rgba(20, 184, 166, 0.6);
+  width: 140px;
+  height: 140px;
+  margin: 10px;
+  box-shadow: 0 0 10px rgba(20, 184, 166, 0.2);
+}
+.ring-z {
+  border-color: rgba(255, 255, 255, 0.1);
+  width: 120px;
+  height: 120px;
+  margin: 20px;
+}
+
+/* Tiny orbiting satellite lights on the rings */
+.satellite-dot {
+  position: absolute;
+  top: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 6px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #fff, 0 0 15px #6366f1;
+}
+.alt-dot {
+  top: 50%;
+  left: -3px;
+  transform: translateY(-50%);
+  box-shadow: 0 0 8px #fff, 0 0 15px #14b8a6;
+}
+
+/* Inner Earth */
+.elegant-earth {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  z-index: 5;
+}
+.earth-glow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #14b8a6, #6366f1);
+  filter: blur(8px);
+  opacity: 0.8;
+  z-index: -1;
+  animation: pulse-glow 2s infinite alternate;
+}
+@keyframes pulse-glow {
+  0% { transform: scale(0.9); opacity: 0.6; }
+  100% { transform: scale(1.1); opacity: 0.9; }
+}
+
+.earth-icon {
+  font-size: 38px;
+  color: #fff;
+  filter: drop-shadow(0 2px 5px rgba(0,0,0,0.5));
+}
+
+/* Typography Box */
+.preloader-status-block {
+  text-align: center;
+  width: 100%;
+}
+
+.loading-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  color: #fff;
+  margin: 0 0 15px 0;
+}
+.loading-title span.accent {
+  background: linear-gradient(135deg, #6366f1, #14b8a6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.loading-data-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  margin-bottom: 8px;
+  padding: 0 5px;
+}
+
+.loading-label {
+  color: #94a3b8;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.loading-value {
+  color: #14b8a6;
+  font-weight: 700;
+}
+
+/* The Line Bar */
+.premium-bar-container {
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.premium-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #14b8a6, #6366f1);
+  box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+/* Light sweep across the bar */
+.bar-sparkle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20px;
+  height: 100%;
+  background: #fff;
+  box-shadow: 0 0 10px #fff;
+  filter: blur(2px);
+}
+
+@media (max-width: 768px) {
+  .preloader-content-wrapper {
+    padding: 40px 30px;
+    width: 85%;
+  }
+}

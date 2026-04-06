@@ -1,70 +1,78 @@
-# Getting Started with Create React App
+# Sohib Akthar | AI Product Engineer & Full-Stack Builder
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A premium, high-performance personal portfolio engineered with a focus on immersive 3D experiences, advanced animations, and a sophisticated glassmorphism design language.
 
-## Available Scripts
+## 🚀 Overview
 
-In the project directory, you can run:
+This portfolio showcases the intersection of **AI architecture**, **3D web development**, and **state-of-the-art UI/UX design**. It is built for speed, responsiveness, and visual impact, utilizing the latest React ecosystem.
 
-### `npm start`
+## ✨ Key Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **🌌 3D Interactive Canvas**: An immersive celestial background and interactive planet models powered by **Three.js** and **React Three Fiber**.
+- **💎 Glassmorphism Design**: A sleek, dark-themed interface utilizing backdrop blurs, glowing gradients, and professional typography for a premium feel.
+- **⚡ Cinematic Animations**: Fluid entrance and scroll-reveal animations choreographed with **Framer Motion**.
+- **📅 Interactive Timeline**: A chronological journey of professional milestones and technical growth.
+- **📩 Functional Contact System**: A secure contact form integration with **EmailJS** for instant communication.
+- **⭐ Client Reviews System**: A dedicated testimonials section with an interactive review submission portal.
+- **📱 Fully Responsive**: Optimized for all viewports, from 4K displays to small-screen mobile devices.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛠️ Technical Stack
 
-### `npm test`
+- **Frontend**: [React 19](https://react.dev/), [JavaScript (ES6+)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- **3D Graphics**: [Three.js](https://threejs.org/), [@react-three/fiber](https://github.com/pmndrs/react-three-fiber), [@react-three/drei](https://github.com/pmndrs/drei)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Styling**: [Vanilla CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) (PostCSS)
+- **Icons**: [React Icons](https://react-icons.github.io/react-icons/), [Lucide React](https://lucide.dev/)
+- **Forms & Backend**: [EmailJS](https://www.emailjs.com/)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## ⚙️ Getting Started
 
-### `npm run build`
+### Prerequisites
+- [Node.js](https://nodejs.org/) (v18.x or later recommended)
+- npm or yarn
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/sohibakthar/my-portfolio.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd my-portfolio
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Environment Setup
+Create a `.env` file in the root directory and add your EmailJS credentials:
+```env
+REACT_APP_EMAILJS_SERVICE_ID=your_service_id
+REACT_APP_EMAILJS_TEMPLATE_ID=your_template_id
+REACT_APP_EMAILJS_PUBLIC_KEY=your_public_key
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Running Locally
+To launch the development server:
+```bash
+npm start
+```
+The application will be accessible at `http://localhost:3000`.
 
-### `npm run eject`
+## 📂 Project Structure
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```text
+src/
+├── assets/         # Images, PDF Resume, 3D Models
+├── components/     # React Components (Hero, Navbar, Journey, Reviews, etc.)
+├── styles/         # Custom CSS modules for each component
+└── App.js          # Core application assembly
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 📜 License
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+This project is licensed under the [MIT License](LICENSE). 
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+Developed with ❤️ by [Sohib Akthar](https://github.com/sohibakthar).

@@ -287,3 +287,20 @@
     transform: none !important;
   }
 }
+
+@media (max-width: 480px) {
+  .work-image-container {
+    padding-top: 75%; /* More square aspect ratio on tiny screens to show details */
+  }
+  .work-tag {
+    font-size: 0.82rem;
+    padding: 6px 12px;
+  }
+  .work-content h3 {
+    font-size: 1.5rem;
+  }
+  .work-content p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+}

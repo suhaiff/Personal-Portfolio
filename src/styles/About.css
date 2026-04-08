@@ -309,14 +309,19 @@
   .image-composition { max-width: 320px; margin-bottom: 20px; }
   
   /* Reset badges closer to image on smaller screens */
-  .top-badge { top: 0; left: -10px; padding: 8px 12px; }
-  .bottom-badge { bottom: 5%; right: -10px; padding: 8px 12px; }
+  .top-badge { top: 10px; left: 10px; padding: 6px 10px; }
+  .bottom-badge { bottom: 10px; right: 10px; padding: 6px 10px; }
   .badge-icon { width: 32px; height: 32px; font-size: 1.2rem; }
   .badge-title { font-size: 0.85rem; }
   .badge-desc { font-size: 0.75rem; }
 
   .about-title { font-size: 2.5rem; }
-  .about-description { margin-bottom: 30px; text-align: center; }
+  .about-description { 
+    margin-bottom: 30px; 
+    text-align: center; 
+    font-size: 1rem; 
+    line-height: 1.8; 
+  }
   
   .focus-card { text-align: left; }
   

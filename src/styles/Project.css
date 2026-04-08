@@ -226,3 +226,33 @@
     transform: translateY(0);
   }
 }
+
+@media (max-width: 480px) {
+  .projects-title {
+    font-size: 2.2rem;
+  }
+  .projects-subtitle {
+    font-size: 0.95rem;
+    padding: 0 16px;
+  }
+  .masonry-grid {
+    column-gap: 16px;
+  }
+  .masonry-item {
+    margin-bottom: 16px;
+  }
+  .projects-container {
+    padding: 0 16px;
+  }
+  .projectnav {
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 50px;
+  }
+  .more, .contactbutton {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+}

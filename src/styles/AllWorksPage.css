@@ -1,0 +1,65 @@
+.all-works-page {
+  min-height: 100vh;
+  background-color: var(--bg-dark, #0f111a); /* Adjusting to dark theme */
+  background: linear-gradient(180deg, #111 0%, #16161a 100%);
+  padding-top: 4rem;
+  padding-bottom: 6rem;
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+}
+
+.all-works-glow-1 {
+  top: -5%;
+  left: -5%;
+  width: 50vw;
+  height: 50vw;
+  opacity: 0.2;
+}
+
+.all-works-glow-2 {
+  bottom: -5%;
+  right: -5%;
+  width: 60vw;
+  height: 60vw;
+  opacity: 0.15;
+}
+
+.all-works-header-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 5%;
+  margin-bottom: 4rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Make grid wider for the all works page */
+.all-works-grid-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 5%;
+  position: relative;
+  z-index: 2;
+}
+
+.massive-grid {
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 40px;
+}
+
+@media (max-width: 1024px) {
+  .massive-grid {
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .all-works-page {
+    padding-top: 2rem;
+  }
+  .massive-grid {
+    grid-template-columns: 1fr;
+  }
+}

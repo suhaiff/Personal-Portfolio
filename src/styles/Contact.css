@@ -239,13 +239,12 @@
 
 
 
-/* ---------- Form Wrapper ---------- */
 .contact-form-wrap {
-  background: linear-gradient(145deg, rgba(22, 22, 40, 0.9), rgba(18, 18, 35, 0.95));
-  border: 1px solid rgba(99, 102, 241, 0.15);
+  background: linear-gradient(145deg, rgba(25, 25, 45, 0.9), rgba(20, 20, 38, 0.95));
+  border: 1px solid rgba(99, 102, 241, 0.2);
   border-radius: 24px;
   padding: 44px 40px;
-  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(99, 102, 241, 0.08);
   backdrop-filter: blur(12px);
 }
 
@@ -270,12 +269,10 @@
 }
 
 .form-group label {
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 1.2px;
-  text-transform: uppercase;
-  color: #6b7280;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #a1a1aa;
   transition: color 0.3s;
 }
 .form-group.focus label {
@@ -287,7 +284,7 @@
   padding: 13px 16px;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(99, 102, 241, 0.15);
-  border-radius: 12px;
+  border-radius: 8px;
   color: #e6eef8;
   font-family: 'Inter', sans-serif;
   font-size: 0.95rem;
@@ -309,6 +306,58 @@
   box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15), 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
+/* ---------- Chip Groups (Radio Buttons) ---------- */
+.chip-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.chip-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(99, 102, 241, 0.15);
+  border-radius: 50px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  color: #a1a1aa;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.chip-label input {
+  display: none;
+}
+
+.chip-radio {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1px solid #3f3f46;
+  background: transparent;
+  transition: all 0.2s ease;
+}
+
+.chip-label.selected {
+  background: rgba(99, 102, 241, 0.1);
+  border-color: #6366f1;
+  color: #fff;
+}
+
+.chip-label.selected .chip-radio {
+  background: #fff;
+  border-color: #fff;
+}
+
+.chip-label:hover:not(.selected) {
+  background: rgba(255, 255, 255, 0.08);
+  color: #e4e4e7;
+}
+
 /* ---------- Send Button ---------- */
 .send-btn {
   position: relative;
@@ -323,8 +372,7 @@
   font-weight: 600;
   cursor: pointer;
   transition: box-shadow 0.35s ease, transform 0.25s ease;
-  letter-spacing: 0.5px;
-  margin-top: 4px;
+  margin-top: 12px;
 }
 .send-btn:hover {
   box-shadow: 0 8px 28px rgba(99, 102, 241, 0.55), 0 4px 12px rgba(20, 184, 166, 0.3);
@@ -353,22 +401,7 @@
   font-size: 0.95rem;
 }
 
-/* Shine sweep */
-.btn-shine {
-  position: absolute;
-  top: 0;
-  left: -75%;
-  width: 50%;
-  height: 100%;
-  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transform: skewX(-20deg);
-  animation: btnShine 3s infinite;
-}
-@keyframes btnShine {
-  0%   { left: -75%; }
-  50%  { left: 125%; }
-  100% { left: 125%; }
-}
+/* Removed btn-shine */
 
 /* ============================================================
    Responsive

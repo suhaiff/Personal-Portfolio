@@ -8,8 +8,7 @@ import {
   FaEnvelope,
   FaGithub,
   FaLinkedin,
-  FaTwitter,
-  FaPaperPlane,
+  FaTwitter
 } from "react-icons/fa";
 
 const fadeUp = {
@@ -23,7 +22,14 @@ const fadeUp = {
 
 const Contact = () => {
   const form = useRef();
-  const [formData, setFormData] = useState({ name: "", email: "", subject: "", message: "" });
+  const [formData, setFormData] = useState({ 
+    name: "", 
+    email: "", 
+    whoAreYou: "", 
+    timeline: "", 
+    message: "",
+    company: ""
+  });
   const [isSending, setIsSending] = useState(false);
   const [sent, setSent] = useState(false);
   const [error, setError] = useState(false);
@@ -56,7 +62,7 @@ const Contact = () => {
         () => {
           setIsSending(false);
           setSent(true);
-          setFormData({ name: "", email: "", subject: "", message: "" });
+          setFormData({ name: "", email: "", whoAreYou: "", timeline: "", message: "", company: "" });
           setTimeout(() => setSent(false), 5000);
         },
         (error) => {
@@ -183,12 +189,12 @@ const Contact = () => {
           <form className="contact-form" ref={form} onSubmit={handleSubmit} noValidate>
             <div className="form-row">
               <div className={`form-group ${focused === "name" ? "focus" : ""}`}>
-                <label htmlFor="contact-name">Full Name</label>
+                <label htmlFor="contact-name">Name *</label>
                 <input
                   id="contact-name"
                   type="text"
                   name="name"
-                  placeholder="Suhaif Akthar"
+                  placeholder="Jane Doe"
                   value={formData.name}
                   onChange={handleChange}
                   onFocus={() => setFocused("name")}
@@ -197,12 +203,12 @@ const Contact = () => {
                 />
               </div>
               <div className={`form-group ${focused === "email" ? "focus" : ""}`}>
-                <label htmlFor="contact-email">Email Address</label>
+                <label htmlFor="contact-email">Email *</label>
                 <input
                   id="contact-email"
                   type="email"
                   name="email"
-                  placeholder="you@example.com"
+                  placeholder="jane@company.com"
                   value={formData.email}
                   onChange={handleChange}
                   onFocus={() => setFocused("email")}
@@ -212,27 +218,53 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className={`form-group ${focused === "subject" ? "focus" : ""}`}>
-              <label htmlFor="contact-subject">Subject</label>
-              <input
-                id="contact-subject"
-                type="text"
-                name="subject"
-                placeholder="Project Inquiry / Collaboration / Other"
-                value={formData.subject}
-                onChange={handleChange}
-                onFocus={() => setFocused("subject")}
-                onBlur={() => setFocused(null)}
-              />
+            <div className="form-group">
+              <label>Who are you? *</label>
+              <div className="chip-group">
+                {["Corporation", "Founder / Startup", "Business", "Agency", "Consultant", "Other"].map((option) => (
+                  <label key={option} className={`chip-label ${formData.whoAreYou === option ? "selected" : ""}`}>
+                    <input
+                      type="radio"
+                      name="whoAreYou"
+                      value={option}
+                      checked={formData.whoAreYou === option}
+                      onChange={handleChange}
+                      required
+                    />
+                    <span className="chip-radio"></span>
+                    {option}
+                  </label>
+                ))}
+              </div>
+            </div>
+
+            <div className="form-group">
+              <label>Timeline *</label>
+              <div className="chip-group">
+                {["Ongoing / Exploring", "ASAP", "1-4 weeks", "1-3 months"].map((option) => (
+                  <label key={option} className={`chip-label ${formData.timeline === option ? "selected" : ""}`}>
+                    <input
+                      type="radio"
+                      name="timeline"
+                      value={option}
+                      checked={formData.timeline === option}
+                      onChange={handleChange}
+                      required
+                    />
+                    <span className="chip-radio"></span>
+                    {option}
+                  </label>
+                ))}
+              </div>
             </div>
 
             <div className={`form-group ${focused === "message" ? "focus" : ""}`}>
-              <label htmlFor="contact-message">Message</label>
+              <label htmlFor="contact-message">Tell me about your project *</label>
               <textarea
                 id="contact-message"
                 name="message"
-                rows="6"
-                placeholder="Tell me about your project or idea..."
+                rows="5"
+                placeholder="What are you building, and what does success look like?"
                 value={formData.message}
                 onChange={handleChange}
                 onFocus={() => setFocused("message")}
@@ -241,12 +273,26 @@ const Contact = () => {
               />
             </div>
 
+            <div className={`form-group ${focused === "company" ? "focus" : ""}`}>
+              <label htmlFor="contact-company">Company</label>
+              <input
+                id="contact-company"
+                type="text"
+                name="company"
+                placeholder="Company name (optional)"
+                value={formData.company}
+                onChange={handleChange}
+                onFocus={() => setFocused("company")}
+                onBlur={() => setFocused(null)}
+              />
+            </div>
+
             <motion.button
               type="submit"
               disabled={isSending}
               className={`send-btn ${sent ? "sent" : ""} ${error ? "error" : ""}`}
-              whileHover={{ scale: isSending ? 1 : 1.03 }}
-              whileTap={{ scale: isSending ? 1 : 0.97 }}
+              whileHover={{ scale: isSending ? 1 : 1.02 }}
+              whileTap={{ scale: isSending ? 1 : 0.98 }}
             >
               {isSending ? (
                 <span className="btn-inner">Sending...</span>
@@ -255,11 +301,8 @@ const Contact = () => {
               ) : error ? (
                 <span className="btn-inner">❌ Error! Try again.</span>
               ) : (
-                <span className="btn-inner">
-                  <FaPaperPlane className="btn-icon" /> Send Message
-                </span>
+                <span className="btn-inner">Send message</span>
               )}
-              <span className="btn-shine" />
             </motion.button>
           </form>
         </motion.div>

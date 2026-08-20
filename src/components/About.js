@@ -44,10 +44,10 @@ const About = () => {
               transition={{ delay: 0.4, duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <span className="badge-icon">🎨</span>
+              <span className="badge-icon">⚙️</span>
               <div className="badge-text">
-                <span className="badge-title">Creative</span>
-                <span className="badge-desc">UI/UX Focus</span>
+                <span className="badge-title">Architect</span>
+                <span className="badge-desc">Systems & IoT</span>
               </div>
             </motion.div>
 
@@ -60,7 +60,7 @@ const About = () => {
             >
               <span className="badge-icon">⚡</span>
               <div className="badge-text">
-                <span className="badge-title">3+ Years</span>
+                <span className="badge-title">5+ Years</span>
                 <span className="badge-desc">Experience</span>
               </div>
             </motion.div>
@@ -76,9 +76,9 @@ const About = () => {
           transition={{ duration: 0.8 }}
         >
           <span className="about-badge">ABOUT ME</span>
-          <h2 className="about-title">Crafting digital <span>experiences</span>.</h2>
+          <h2 className="about-title">Architecting robust <span>systems</span>.</h2>
           <p className="about-description">
-            I'm Sohib Akthar, an AI Product Engineer who bridges the gap between intelligent systems and real-world products. I specialize in building AI-powered applications — from model integration and prompt engineering to polished, production-ready interfaces.
+            I'm Sohib Akthar, a Senior Full-Stack & Electronics Engineer. I specialize in designing and building scalable software architectures, advanced AI integrations, and custom IoT systems. I bring a deep understanding of both hardware and software to create holistic, high-performance solutions.
           </p>
 
           {/* Core Focus Cards */}
@@ -86,22 +86,22 @@ const About = () => {
             <div className="focus-card">
               <FaCode className="focus-icon text-indigo" />
               <div>
-                <h4>AI Product Engineer</h4>
-                <p>React, Node.js, Python</p>
+                <h4>Full-Stack Architecture</h4>
+                <p>React, Node.js, Databases</p>
               </div>
             </div>
             <div className="focus-card">
-              <FaPaintBrush className="focus-icon text-teal" />
+              <FaLayerGroup className="focus-icon text-teal" />
               <div>
-                <h4>Creative Design</h4>
-                <p>Figma, Tailwind, CSS</p>
+                <h4>IoT & Electronics</h4>
+                <p>Embedded Systems, Sensors</p>
               </div>
             </div>
             <div className="focus-card">
-              <FaLayerGroup className="focus-icon text-purple" />
+              <FaPaintBrush className="focus-icon text-purple" />
               <div>
-                <h4>3D & Motion</h4>
-                <p>Three.js, Blender, Framer</p>
+                <h4>System Design</h4>
+                <p>Scalability, Security, Cloud</p>
               </div>
             </div>
           </div>
@@ -122,8 +122,8 @@ const About = () => {
             </motion.div>
             <div className="stat-divider"></div>
             <motion.div className="stat-item" variants={fadeUp}>
-              <h3>20+</h3>
-              <p>Projects Done</p>
+              <h3>50+</h3>
+              <p>Projects Delivered</p>
             </motion.div>
             <div className="stat-divider"></div>
             <motion.div className="stat-item" variants={fadeUp}>

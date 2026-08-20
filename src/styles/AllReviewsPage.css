@@ -1,0 +1,97 @@
+.all-reviews-page {
+  min-height: 100vh;
+  background-color: var(--bg-dark, #0f111a); /* Assuming a dark theme */
+  padding-top: 4rem;
+  padding-bottom: 6rem;
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+}
+
+.all-reviews-glow-1 {
+  top: -10%;
+  left: -10%;
+  width: 50vw;
+  height: 50vw;
+  opacity: 0.15;
+}
+
+.all-reviews-glow-2 {
+  bottom: -10%;
+  right: -10%;
+  width: 60vw;
+  height: 60vw;
+  opacity: 0.1;
+}
+
+.all-reviews-header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 5%;
+  margin-bottom: 4rem;
+  position: relative;
+  z-index: 2;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #a0aec0;
+  text-decoration: none;
+  font-weight: 500;
+  margin-bottom: 3rem;
+  transition: color 0.3s ease;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.back-link:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.massive-title {
+  font-size: clamp(2.5rem, 5vw, 4.5rem) !important;
+  margin-bottom: 1.5rem !important;
+  line-height: 1.1;
+}
+
+.all-reviews-grid-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 5%;
+  position: relative;
+  z-index: 2;
+}
+
+/* Masonry approximation using CSS Columns */
+.all-reviews-masonry {
+  column-count: 3;
+  column-gap: 2rem;
+}
+
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 2rem;
+  display: inline-block; /* Fixes breaks in some browsers */
+  width: 100%;
+}
+
+/* Make it responsive */
+@media (max-width: 1024px) {
+  .all-reviews-masonry {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .all-reviews-masonry {
+    column-count: 1;
+  }
+  .all-reviews-page {
+    padding-top: 2rem;
+  }
+}

@@ -1,59 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { FaGithub, FaExternalLinkAlt, FaArrowRight } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import { recentProjects } from "../data/projectsData";
 import "../styles/Recentworks.css";
-
-import Project1 from "../assets/project4.png";
-import Project2 from "../assets/project17.png";
-import Project3 from "../assets/restaurant_website.png";
-import Project4 from "../assets/HRM.jpg";
-import Project5 from "../assets/client_portfolio(naveen).png";
-import Project6 from "../assets/project6.webp";
-
-const recentProjects = [
-  { 
-    id: 1, 
-    image: Project1, 
-    title: "AI Dashboard UI", 
-    text: "A sleek, dark-themed analytics dashboard interface built for an AI data visualization startup.", 
-    tags: ["React", "Node.js", "OpenAi"] 
-  },
-  { 
-    id: 2, 
-    image: Project2, 
-    title: "Personal Portfolio", 
-    text: "A modern, glassmorphic portfolio website designed to showcase a freelance developer's work and skills.", 
-    tags: ["React", "Three.js", "JavaScript"] 
-  },
-  { 
-    id: 3, 
-    image: Project4, 
-    title: "HR Management App", 
-    text: "A clean, intuitive HR management application interface designed for a mid-sized tech company.", 
-    tags: ["React", "Python", "OpenAi"] 
-  },
-  { 
-    id: 4, 
-    image: Project3, 
-    title: "E-Commerce Landing", 
-    text: "A vibrant, user-friendly landing page for an e-commerce platform, featuring smooth animations and a responsive design.", 
-    tags: ["Frontend", "Web Design"] 
-  },
-  { 
-    id: 5, 
-    image: Project5, 
-    title: "Client Portfolio", 
-    text: "A clean, minimalist portfolio website for a creative agency, emphasizing visual storytelling and user engagement.", 
-    tags: ["Frontend", "Web Design"] 
-  },
-  { 
-    id: 6, 
-    image: Project6, 
-    title: "3D Model Showcase", 
-    text: "An interactive 3D model showcase built with blender, allowing users to explore and manipulate 3D assets in real-time.", 
-    tags: ["Blender", "Figma"] 
-  },
-];
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -86,8 +36,7 @@ const RecentWorks = () => {
           <span className="works-badge">PORTFOLIO</span>
           <h2 className="works-title">Recent <span>Works</span></h2>
           <p className="works-subtitle">
-            A selection of my latest projects. Each piece demonstrates my focus on clean code, 
-            intuitive user experiences, and premium front-end design.
+            A selection of my latest engineering projects. Each piece demonstrates my focus on scalable software architecture, robust hardware-software integration, and premium front-end design.
           </p>
         </motion.div>
 
@@ -98,7 +47,7 @@ const RecentWorks = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
         >
-          {recentProjects.map((project) => (
+          {recentProjects.slice(0, 6).map((project) => (
             <motion.div className="work-card" key={project.id} variants={cardVariants}>
               
               <div className="work-image-container">
@@ -129,6 +78,21 @@ const RecentWorks = () => {
             </motion.div>
           ))}
         </motion.div>
+
+        {recentProjects.length > 0 && (
+          <motion.div 
+            className="more-works-container"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            style={{ textAlign: "center", marginTop: "4rem" }}
+          >
+            <Link to="/all-works" className="more-works-btn">
+              View All Projects <FaArrowRight style={{ marginLeft: "8px", verticalAlign: "middle" }} />
+            </Link>
+          </motion.div>
+        )}
       </div>
     </section>
   );

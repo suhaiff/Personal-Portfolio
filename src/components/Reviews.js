@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
   FaQuoteLeft, 
@@ -8,45 +8,12 @@ import {
   FaCheckCircle, 
   FaArrowRight
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import { ReviewContext } from "../context/ReviewContext";
 import "../styles/Reviews.css";
 
-const initialReviews = [
-  {
-    id: 1,
-    name: "Alexander Wright",
-    role: "Founding Engineer @ AI-Flow",
-    text: "Working with Sohib was a game-changer for our MVP. His ability to bridge advanced AI models with seamless React interfaces is rare. The final product exceeded our expectations.",
-    rating: 5,
-    initial: "A"
-  },
-  {
-    id: 2,
-    name: "Sarah Chen",
-    role: "Product Lead at Nexus-UX",
-    text: "Incredibly intuitive developer. Sohib doesn't just build what you ask; he thinks ahead to how the user will interact with every pixel and animation. Highly recommended.",
-    rating: 5,
-    initial: "S"
-  },
-  {
-    id: 3,
-    name: "Marcus Thorne",
-    role: "CEO of Thorne Digitial",
-    text: "Sohib's expertise in Three.js and Framer Motion brought our brand to life in ways we didn't think were possible on the web. A true creative technologist.",
-    rating: 5,
-    initial: "M"
-  },
-  {
-      id: 4,
-      name: "Lena Rostova",
-      role: "Lead Designer at Mir-Studio",
-      text: "Sohib's attention to detail is unmatched. He has a perfect understanding of modern aesthetics and his technical implementation is flawless.",
-      rating: 5,
-      initial: "L"
-  }
-];
-
 const Reviews = () => {
-  const [reviews, setReviews] = useState(initialReviews);
+  const { reviews, addReview } = useContext(ReviewContext);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [formData, setFormData] = useState({
@@ -72,7 +39,7 @@ const Reviews = () => {
         ...formData,
         initial: formData.name.charAt(0).toUpperCase()
       };
-      setReviews([newReview, ...reviews]);
+      addReview(newReview);
       
       // Reset after some time
       setTimeout(() => {
@@ -83,26 +50,7 @@ const Reviews = () => {
     }, 800);
   };
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.3
-      }
-    }
-  };
-
-  const cardVariants = {
-    hidden: { opacity: 0, y: 30, scale: 0.95 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: { duration: 0.6, ease: "easeOut" }
-    }
-  };
+  // Removed unused variants
 
   return (
     <section className="reviews-section" id="reviews">
@@ -134,20 +82,20 @@ const Reviews = () => {
           </motion.button>
         </motion.div>
 
-        <motion.div 
-          className="reviews-grid"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
-        >
-          {reviews.map((review) => (
-            <motion.div 
-              key={review.id} 
-              className="review-card"
-              variants={cardVariants}
-            >
-              <div className="card-inner">
+        <motion.div className="reviews-grid" layout>
+          <AnimatePresence mode="popLayout">
+            {reviews.slice(0, 6).map((review, index) => (
+              <motion.div 
+                key={review.id} 
+                className="review-card"
+                layout
+                initial={{ opacity: 0, y: 30, scale: 0.95 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <div className="card-inner">
                 <div className="star-rating">
                   {[...Array(review.rating)].map((_, i) => (
                     <FaStar key={i} />
@@ -166,9 +114,25 @@ const Reviews = () => {
                   </div>
                 </div>
               </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            ))}
+          </AnimatePresence>
         </motion.div>
+
+        {reviews.length > 0 && (
+          <motion.div 
+            className="more-reviews-container"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            style={{ textAlign: "center", marginTop: "3rem" }}
+          >
+            <Link to="/all-reviews" className="more-reviews-btn">
+              View All Reviews <FaArrowRight style={{ marginLeft: "8px", verticalAlign: "middle" }} />
+            </Link>
+          </motion.div>
+        )}
       </div>
 
       {/* Submission Modal */}

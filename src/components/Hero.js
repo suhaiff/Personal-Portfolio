@@ -38,7 +38,7 @@ const Hero = () => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
         >
-          AI Product Engineer & Full-Stack Builder
+          Senior Full-Stack & Electronics Engineer
         </motion.h2>
 
         {/* Description */}
@@ -48,7 +48,7 @@ const Hero = () => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
         >
-          I engineer AI products that don't just work — they think. Bridging the gap between research and real-world impact, I design systems where models, data, and interfaces come together into something genuinely useful.
+          I engineer systems that bridge the digital and physical worlds. With extensive experience in scalable software architecture and custom IoT hardware, I design robust, end-to-end solutions where complex data, intelligent models, and electronics seamlessly integrate.
         </motion.p>
 
         {/* Action Buttons */}
@@ -93,7 +93,7 @@ const Hero = () => {
         animate={{ y: [0, -20, 0], rotate: [0, -2, 0] }}
         transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
       >
-        React Ecosystem
+        Scalable Architectures
       </motion.div>
 
       <motion.div
@@ -102,7 +102,7 @@ const Hero = () => {
         animate={{ y: [0, 25, 0], rotate: [0, 3, 0] }}
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
       >
-        UI / UX Architecture
+        Hardware Integration
       </motion.div>
 
       <motion.div
@@ -111,7 +111,7 @@ const Hero = () => {
         animate={{ y: [0, -15, 0], rotate: [0, 5, 0] }}
         transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
       >
-        Three.js / WebGL
+        IoT Systems
       </motion.div>
 
       <motion.div
@@ -120,7 +120,7 @@ const Hero = () => {
         animate={{ y: [0, 20, 0], rotate: [0, -4, 0] }}
         transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 1.2 }}
       >
-        Front-End
+        Full-Stack
       </motion.div>
 
     </div>

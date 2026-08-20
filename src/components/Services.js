@@ -1,8 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import "../styles/Services.css"; 
-import { FaPaintBrush, FaSearch, FaPenNib } from 'react-icons/fa';
+import { FaPaintBrush, FaSearch, FaMicrochip } from 'react-icons/fa';
 import { IoCubeSharp } from "react-icons/io5";
+import { 
+  SiDocker, SiVite, SiTypescript, SiPostgresql, 
+  SiSupabase, SiFlask, SiNodedotjs, SiMysql, SiFirebase 
+} from "react-icons/si";
 
 import { ReactComponent as HtmlLogo } from "../assets/morquee/html-1.svg";
 import { ReactComponent as CssLogo } from "../assets/morquee/css.svg";
@@ -27,25 +31,25 @@ const staggerContainer = {
 };
 
 function Services() {
-  const tags = ["AI Product Engineering", "Web Development", "Model Integration", "Creative Design", "Full-Stack Architecture", "LLM Integration", "3D Web"];
+  const tags = ["Full-Stack Architecture", "Hardware-Software Integration", "IoT Systems", "Embedded Electronics", "AI Product Engineering", "3D Web Experiences", "Scalable Backends"];
   const services = [
-    { icon: <IoCubeSharp />, title: "AI Product Engineering", description: "I bridge the gap between intelligent systems and production-ready products, ensuring that AI models deliver real value through intuitive interfaces." },
-    { icon: <FaPaintBrush />, title: "Model Integration", description: "I expertly connect advanced LLMs and specialized AI agents to web applications, handling complex data flows and prompt engineering." },
-    { icon: <FaSearch />, title: "Full-Stack Development", description: "I build robust, scalable architectures from the database layer to the frontend, ensuring high performance and security." },
-    { icon: <FaPenNib />, title: "Creative Web Design", description: "I craft immersive 3D experiences and high-performance, animated interfaces that captivate users and elevate brands." }
+    { icon: <IoCubeSharp />, title: "Full-Stack Architecture", description: "I architect and build robust, scalable systems from the database layer to the frontend, ensuring high performance, security, and maintainability." },
+    { icon: <FaMicrochip />, title: "Hardware-Software Integration", description: "I bridge the physical and digital worlds, designing embedded electronics and IoT systems that communicate seamlessly with modern web applications." },
+    { icon: <FaSearch />, title: "AI & Model Integration", description: "I expertly connect advanced LLMs and specialized AI agents to production environments, handling complex data flows and prompt engineering." },
+    { icon: <FaPaintBrush />, title: "Immersive Web Interfaces", description: "I craft stunning 3D experiences and high-performance, animated interfaces that captivate users and elevate the digital presence of brands." }
   ];
 
-  const techLogos = [HtmlLogo, CssLogo, JsLogo, ReactLogo, PythonLogo, BlenderLogo, FigmaLogo, TailwindLogo, GitLogo, GithubLogo, VscodeLogo];
+  const techLogos = [HtmlLogo, CssLogo, JsLogo, ReactLogo, PythonLogo, BlenderLogo, FigmaLogo, TailwindLogo, GitLogo, GithubLogo, VscodeLogo, SiDocker, SiVite, SiTypescript, SiPostgresql, SiSupabase, SiFlask, SiNodedotjs, SiMysql, SiFirebase];
 
   const skillPills = [
-    { icon: "fa-solid fa-microchip", text: "AI Engineering" },
-    { icon: "fa-solid fa-code", text: "Full-Stack Development" },
-    { icon: "fa-solid fa-bolt", text: "Prompt Engineering" },
-    { icon: "fa-solid fa-mobile", text: "Responsive Design" },
-    { icon: "fa-solid fa-lock", text: "Clean Code" },
-    { icon: "fa-solid fa-rocket", text: "Deployment" },
-    { icon: "fa-solid fa-handshake", text: "Collaboration" },
-    { icon: "fa-solid fa-folder-open", text: "Project Management" }
+    { icon: "fa-solid fa-code", text: "Full-Stack Architecture" },
+    { icon: "fa-solid fa-microchip", text: "Embedded Electronics" },
+    { icon: "fa-solid fa-wifi", text: "IoT Systems" },
+    { icon: "fa-solid fa-server", text: "Scalable Backends" },
+    { icon: "fa-solid fa-brain", text: "AI Integration" },
+    { icon: "fa-solid fa-lock", text: "System Security" },
+    { icon: "fa-solid fa-handshake", text: "Technical Leadership" },
+    { icon: "fa-solid fa-folder-open", text: "End-to-End Delivery" }
   ];
 
   return (
@@ -66,7 +70,7 @@ function Services() {
           <span className="services-badge">WHAT I DO</span>
           <h2 className="services-title">My <span>Services</span></h2>
           <p className="services-description">
-            Personable and adaptable AI Product Engineer who brings ideas to life at the intersection of AI and great product thinking. From model integration to production-ready interfaces, I deliver solutions that are as intelligent as they are intuitive.
+            Senior Full-Stack & Electronics Engineer passionate about building complex, integrated solutions. From architecting scalable web platforms to designing custom IoT hardware, I deliver end-to-end systems that are robust, intelligent, and highly performant.
           </p>
           <hr className='services-divider' />
           

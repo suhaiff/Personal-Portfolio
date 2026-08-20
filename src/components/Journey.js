@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import {
   FaHtml5,
   FaFolderOpen,
-  FaJsSquare,
   FaReact,
   FaPalette,
   FaServer,
@@ -14,46 +13,40 @@ import "../styles/Journey.css";
 const journeySteps = [
   {
     icon: <FaHtml5 />,
-    title: "Getting Started",
-    description: "Began learning HTML theoretically, then stepped into CSS. Combined both to create small projects and simple web pages.",
+    title: "Software Foundations",
+    description: "Began professional career building robust web applications, focusing on clean code and scalable architecture.",
     date: "2021"
   },
   {
-    icon: <FaFolderOpen />,
-    title: "First Portfolio",
-    description: "Built my first personal portfolio using HTML & CSS in VS Code, gaining foundational structural knowledge of websites.",
+    icon: <FaServer />,
+    title: "Full-Stack & Cloud",
+    description: "Architected end-to-end solutions using React and Node.js, deploying complex applications to cloud infrastructure.",
     date: "2022"
   },
   {
-    icon: <FaJsSquare />,
-    title: "Exploring JavaScript",
-    description: "Learned JavaScript to make websites dynamic and interactive, creating small projects for practice and skill-building.",
+    icon: <FaFolderOpen />,
+    title: "IoT & Embedded Systems",
+    description: "Expanded expertise into hardware-software integration, designing custom IoT systems and embedded electronics.",
     date: "2023"
   },
   {
-    icon: <FaReact />,
-    title: "React Development",
-    description: "Transitioned to React.js to build modern component-based UIs and worked on freelance projects for targeted clients.",
-    date: "Mid 2023"
-  },
-  {
     icon: <FaPalette />,
-    title: "Design & Creativity",
-    description: "Started learning Blender and Figma, and experimented with Three.js to seamlessly bring 3D elements into websites.",
+    title: "Advanced UI Architecture",
+    description: "Integrated WebGL and Three.js into production environments, delivering immersive 3D web experiences.",
     date: "2024"
   },
   {
-    icon: <FaServer />,
-    title: "Full-Stack Development",
-    description: "Currently exploring backend development paradigms and database architectures to evolve into a Full-Stack Developer.",
+    icon: <FaRobot />,
+    title: "AI & Model Integration",
+    description: "Developed intelligent AI agents and integrated advanced LLMs into complex enterprise applications.",
     date: "2025"
   },
   {
-    icon: <FaRobot />,
-    title: "AI Product Development",
-    description: "Diving into AI and machine learning to create intelligent applications, and exploring how to integrate AI into web development.",
-    date: "Present"
-  },
+    icon: <FaReact />,
+    title: "Technical Leadership",
+    description: "Leading development of holistic, high-performance systems bridging custom hardware and AI-driven frontends.",
+    date: "2026 - Present"
+  }
 ];
 
 const Journey = () => {

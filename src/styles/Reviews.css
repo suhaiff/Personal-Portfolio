@@ -362,6 +362,31 @@
   margin-bottom: 20px;
 }
 
+/* More Reviews Button */
+.more-reviews-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 16px 36px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.more-reviews-btn:hover {
+  background: rgba(20, 184, 166, 0.1);
+  border-color: #14b8a6;
+  box-shadow: 0 0 25px rgba(20, 184, 166, 0.2);
+  transform: translateY(-3px);
+  color: #14b8a6;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .reviews-grid {

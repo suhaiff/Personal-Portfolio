@@ -7,8 +7,11 @@ import Project2 from "../assets/project2.png";
 import Project3 from "../assets/project3.png";
 import Project4 from "../assets/project4.png";
 import Project5 from "../assets/project5.webp";
-import Project6 from "../assets/project6.webp";
+import Project6 from "../assets/HRM.png";
 import Project7 from "../assets/project7.png";
+import Project8 from "../assets/um_flowers.png";
+import Project9 from "../assets/box-app.png";
+import Project10 from "../assets/vtab-sentinel.png";
 
 const projectsGallery = [
   { src: Project1, alt: "E-Commerce Website", title: "E-Commerce Website", category: "Web Design" },
@@ -18,6 +21,9 @@ const projectsGallery = [
   { src: Project5, alt: "AI Integrated Products", title: "AI Integrated Products", category: "Python" },
   { src: Project6, alt: "HR Application", title: "HR Application", category: "React, Python" },
   { src: Project7, alt: "Client Portfolios", title: "Client Portfolios", category: "Frontend Development" },
+  { src: Project8, alt: "UM Flowers", title: "UM Flowers", category: "Web Design" },
+  { src: Project9, alt: "Box App", title: "Box App", category: "React, Three.js, Blender" },
+  { src: Project10, alt: "VTab Sentinel", title: "VTab Sentinel", category: "IoT, React" }
 ];
 
 const staggerContainer = {
